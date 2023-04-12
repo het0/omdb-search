@@ -1,9 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import type {
-  SearchResultsQuery,
-  SearchResultsQueryVariables,
-} from '@/types/types';
+import type { SearchResultsQuery, SearchResultsQueryVariables } from '@/types/types';
 
 const BASE_URL = 'https://www.omdbapi.com/';
 
@@ -19,7 +16,7 @@ export const moviesApi = createApi({
         method: 'GET',
         params: {
           apikey: import.meta.env.VITE_OMDBAPI_KEY,
-          ...params
+          ...params,
         },
       }),
     }),
@@ -30,7 +27,5 @@ export const moviesApi = createApi({
 export const {
   useSearchMoviesQuery,
   useLazySearchMoviesQuery,
-  endpoints: {
-    searchMovies,
-  },
+  endpoints: { searchMovies },
 } = moviesApi;

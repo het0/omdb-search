@@ -6,8 +6,8 @@ import favoritesReducer, { favoritesSlice } from '@/redux/reducres/favorites/red
 
 export const store = configureStore({
   reducer: {
-    'ui': uiReducer,
-    'favorites': favoritesReducer,
+    ui: uiReducer,
+    favorites: favoritesReducer,
     // Add the generated reducer as a specific top-level slice
     [moviesApi.reducerPath]: moviesApi.reducer,
   },

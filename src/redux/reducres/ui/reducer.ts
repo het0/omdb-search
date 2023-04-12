@@ -1,10 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import {
-  IUIState,
-  IEntityActionPayload,
-} from "./types";
+import { IUIState, IEntityActionPayload } from './types';
 
 const SLICE_BASE_NAME = 'ui';
 
@@ -24,8 +21,6 @@ const uiSlice = createSlice({
   },
 });
 
-export const {
-  setEntityState,
-} = uiSlice.actions;
+export const { setEntityState } = uiSlice.actions;
 
 export default uiSlice.reducer;

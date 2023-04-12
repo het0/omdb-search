@@ -1,10 +1,14 @@
 const storageMock = {
   length: 0,
-  getItem() { return null; },
+  getItem() {
+    return null;
+  },
   setItem() {},
   removeItem() {},
   clear(): void {},
-  key() { return null; },
+  key() {
+    return null;
+  },
 } as Storage;
 
 export class LocalStorage {

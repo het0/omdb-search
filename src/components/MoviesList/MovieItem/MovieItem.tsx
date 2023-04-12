@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -7,21 +7,16 @@ import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 
-import FavoriteIcon from "@/components/Icons/FavoriteIcon";
-import FavoriteFilledIcon from "@/components/Icons/FavoriteFilledIcon";
+import FavoriteIcon from '@/components/Icons/FavoriteIcon';
+import FavoriteFilledIcon from '@/components/Icons/FavoriteFilledIcon';
 import { SearchResultsItem } from '@/types/types';
-import { addFavorite, removeFavorite } from "@/redux/reducres/favorites/reducer";
-import { selectIsInFavoriteList } from "@/redux/reducres/favorites/selectors";
+import { addFavorite, removeFavorite } from '@/redux/reducres/favorites/reducer';
+import { selectIsInFavoriteList } from '@/redux/reducres/favorites/selectors';
 
 export type Props = SearchResultsItem;
 
 const MovieItem = (item: Props) => {
-  const {
-    Poster,
-    Year,
-    Title,
-    imdbID,
-  } = item;
+  const { Poster, Year, Title, imdbID } = item;
 
   const dispatch = useDispatch();
 
@@ -37,12 +32,7 @@ const MovieItem = (item: Props) => {
 
   return (
     <Card elevation={4}>
-      <CardMedia
-        component="img"
-        height="240"
-        image={Poster}
-        alt={Title}
-      />
+      <CardMedia component="img" height="240" image={Poster} alt={Title} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {Title}
@@ -52,11 +42,8 @@ const MovieItem = (item: Props) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton
-          aria-label="Add to favorites"
-          onClick={addToFavorites}
-        >
-          {isInFavoriteList ? <FavoriteFilledIcon/> : <FavoriteIcon/>}
+        <IconButton aria-label="Add to favorites" onClick={addToFavorites}>
+          {isInFavoriteList ? <FavoriteFilledIcon /> : <FavoriteIcon />}
         </IconButton>
       </CardActions>
     </Card>

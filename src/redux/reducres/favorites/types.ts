@@ -1,4 +1,4 @@
-import { SearchResultsItem } from "@/types/types";
+import { SearchResultsItem } from '@/types/types';
 
 export type FavoritesState = {
   favorites: SearchResultsItem[];

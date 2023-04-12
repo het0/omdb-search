@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import InputBase from '@mui/material/InputBase';
 
 import SearchIcon from '@/components/Icons/SearchIcon';
-import { useConnectedUIEntity } from "@/hooks/redux/useConnectedUIEntity";
+import { useConnectedUIEntity } from '@/hooks/redux/useConnectedUIEntity';
 
 const SearchInput = () => {
   const [value, setValue] = useConnectedUIEntity('searchInputValue', '');
@@ -43,7 +43,7 @@ const SearchInput = () => {
           justifyContent: 'center',
         })}
       >
-        <SearchIcon/>
+        <SearchIcon />
       </Box>
       <InputBase
         placeholder="Search…"

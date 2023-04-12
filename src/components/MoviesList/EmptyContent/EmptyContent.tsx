@@ -20,11 +20,7 @@ const EmptyContent = ({ title = 'Nothing found :(', subTitle }: Props) => {
       <Typography variant="h4" color="text.main" sx={{ textAlign: 'center' }}>
         {title}
       </Typography>
-      <Typography
-        variant="h6"
-        color="text.secondary"
-        sx={{ textAlign: 'center' }}
-      >
+      <Typography variant="h6" color="text.secondary" sx={{ textAlign: 'center' }}>
         {subTitle}
       </Typography>
     </Stack>

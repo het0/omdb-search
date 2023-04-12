@@ -1,16 +1,16 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Box from "@mui/material/Box";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import Drawer, { DrawerProps } from "@mui/material/Drawer";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import Drawer, { DrawerProps } from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 
-import { removeFavorite } from "@/redux/reducres/favorites/reducer";
-import { RootState } from "@/redux/store";
-import CloseIcons from "@/components/Icons/CloseIcons";
-import WaitForItemsLoading from "@/components/WaitForItemsLoading/WaitForItemsLoading";
+import { removeFavorite } from '@/redux/reducres/favorites/reducer';
+import { RootState } from '@/redux/store';
+import CloseIcons from '@/components/Icons/CloseIcons';
+import WaitForItemsLoading from '@/components/WaitForItemsLoading/WaitForItemsLoading';
 
 export type Props = DrawerProps;
 
@@ -27,15 +27,15 @@ const FavoritesDrawer = (props: Props) => {
           maxHeight: '100%',
           width: {
             sm: '360px',
-            xs: '100%'
+            xs: '100%',
           },
-        }
+        },
       }}
       {...props}
     >
       <WaitForItemsLoading
-        empty={(items?.length === 0 || !items)}
-        EmptyRender={(
+        empty={items?.length === 0 || !items}
+        EmptyRender={
           <Box
             sx={{
               display: 'flex',
@@ -46,7 +46,7 @@ const FavoritesDrawer = (props: Props) => {
           >
             There are no items in your favorites list.
           </Box>
-        )}
+        }
       >
         <List
           sx={{
@@ -61,7 +61,7 @@ const FavoritesDrawer = (props: Props) => {
               <ListItem
                 sx={{
                   pr: '60px',
-                  position: 'relative'
+                  position: 'relative',
                 }}
               >
                 {item.Title}
@@ -73,14 +73,10 @@ const FavoritesDrawer = (props: Props) => {
                   }}
                   onClick={() => dispatch(removeFavorite({ favorite: item }))}
                 >
-                  <CloseIcons/>
+                  <CloseIcons />
                 </IconButton>
               </ListItem>
-              <Divider
-                component="li"
-                variant="inset"
-                sx={{ ml: 0 }}
-              />
+              <Divider component="li" variant="inset" sx={{ ml: 0 }} />
             </React.Fragment>
           ))}
         </List>

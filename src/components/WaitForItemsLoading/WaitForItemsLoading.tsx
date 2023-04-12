@@ -8,21 +8,8 @@ export type Props = React.PropsWithChildren<{
   ShimmerComponent?: React.FunctionComponent;
 }>;
 
-const WaitForItemsLoading = ({
-  empty,
-  loading,
-  count = 5,
-  ShimmerComponent,
-  EmptyRender,
-  children,
-}: Props) => {
-  return (
-    <>
-      {loading && ShimmerComponent ? Array.from({ length: count! }).map((_, i) => (
-        <ShimmerComponent key={i}/>
-      )) : empty ? EmptyRender : children}
-    </>
-  );
+const WaitForItemsLoading = ({ empty, loading, count = 5, ShimmerComponent, EmptyRender, children }: Props) => {
+  return <>{loading && ShimmerComponent ? Array.from({ length: count! }).map((_, i) => <ShimmerComponent key={i} />) : empty ? EmptyRender : children}</>;
 };
 
 export default WaitForItemsLoading;

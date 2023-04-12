@@ -1,12 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-import LocalStorage from "@/utils/localStorage";
+import LocalStorage from '@/utils/localStorage';
 
-import {
-  FavoritesState,
-  IFavoritesActionPayload,
-} from './types';
+import { FavoritesState, IFavoritesActionPayload } from './types';
 
 const SLICE_BASE_NAME = 'favorites';
 
@@ -23,15 +20,12 @@ export const favoritesSlice = createSlice({
       LocalStorage.set('favorites', state.favorites);
     },
     removeFavorite: (state, action: PayloadAction<IFavoritesActionPayload>) => {
-      state.favorites = state.favorites.filter((item) => (item.imdbID !== action.payload.favorite.imdbID));
+      state.favorites = state.favorites.filter((item) => item.imdbID !== action.payload.favorite.imdbID);
       LocalStorage.set('favorites', state.favorites);
     },
-  }
-})
+  },
+});
 
-export const {
-  addFavorite,
-  removeFavorite,
-} = favoritesSlice.actions;
+export const { addFavorite, removeFavorite } = favoritesSlice.actions;
 
 export default favoritesSlice.reducer;

@@ -7,11 +7,7 @@ import { EffectCallback, useEffect, useRef, useState } from 'react';
  * @param {delay} delay in milliseconds
  * @param {deps} dependencies to watch for changes
  */
-const useThrottledEffect = (
-  callback: EffectCallback,
-  delay: number,
-  deps: any[] = []
-): boolean => {
+const useThrottledEffect = (callback: EffectCallback, delay: number, deps: any[] = []): boolean => {
   const lastRan = useRef<number>(Date.now() - delay);
   const [effectWillRun, setEffectWillRun] = useState(false);
 
